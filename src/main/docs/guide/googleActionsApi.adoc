@@ -11,9 +11,9 @@ Go to the new https://console.actions.google.com/[Google Actions Console] and im
 
 image::googleactionsconsole.png[]
 
-=== Configure your project ID in `actions.json`
+=== Configure your project ID in `action.json`
 
-`actions.json` is a metadata file which we use to inform the Google Cloud Actions Console about the 
+`action.json` is a metadata file which we use to inform the Google Cloud Actions Console about the 
 actions supported by our application. 
 
 Here you can also control:
@@ -33,7 +33,7 @@ We will need to modify the httpExecution items to match your deployed applicatio
 
 
 [source,json]
-.src/main/resources/actions.json
+.src/main/resources/action.json
 ----
 "url": "https://PROJECT_ID.appspot.com/assistantAction/index"
 ----
