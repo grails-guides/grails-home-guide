@@ -48,4 +48,4 @@ ____
 
 image::test-default.png[]
 
-Now you can make a more rich skill, and when you are ready go to the Google API dashbaord, fill in the directory listing and submit it for testing.
+Now you can make a more rich skill, and when you are ready go to the Google API dashboard, fill in the directory listing and submit it for testing.
