@@ -14,7 +14,7 @@ ruleset {
     BooleanGetBoolean 
     BrokenNullCheck 
     BrokenOddnessCheck 
-    ClassForName 
+    //ClassForName 
     ComparisonOfTwoConstants 
     ComparisonWithSelf 
     ConstantAssertExpression 
