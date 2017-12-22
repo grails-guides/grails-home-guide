@@ -1,6 +1,6 @@
 include::{commondir}/common-howto.adoc[]
 
-The initial project is a Grails Application built with the `web` profile where we removed the `asset-pipiline` and `hibernate` depenencies.
+The initial project is a Grails Application built with the `web` profile where we removed the `asset-pipeline` and `hibernate` depenencies.
 
 Although you can go right to the completed example, in order to deploy the app you would need to complete several configuration steps link:index.html#googleCloudSettings#[Google Cloud Settings]. 
 
