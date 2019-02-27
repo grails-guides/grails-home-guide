@@ -23,10 +23,8 @@ apply plugin:"idea"
 apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.grails-gsp"
-apply plugin:"codenarc"
 apply plugin: 'com.google.cloud.tools.appengine' // <1>
 // end::gradleApplyPlugins[]
-apply from: "${project.projectDir}/gradle/codenarc.gradle"
 
 repositories {
     mavenLocal()
@@ -37,10 +35,15 @@ repositories {
 // tag::configurations[]
 configurations {
     compile.exclude module: "tomcat-juli"
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
 }
 // end::configurations[]
 
 dependencies {
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"
@@ -68,12 +71,5 @@ dependencies {
 
 bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
-    addResources = true
-    systemProperties System.properties    
-}
-
-codenarc {
-    toolVersion = '0.27.0'
-    configFile = new File(projectDir, 'config/codenarc/rules.groovy')
-    reportFormat = 'html'
+    sourceResources sourceSets.main
 }
