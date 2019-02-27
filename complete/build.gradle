@@ -37,10 +37,15 @@ repositories {
 // tag::configurations[]
 configurations {
     compile.exclude module: "tomcat-juli"
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
 }
 // end::configurations[]
 
 dependencies {
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"
@@ -68,8 +73,7 @@ dependencies {
 
 bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
-    addResources = true
-    systemProperties System.properties    
+    sourceResources sourceSets.main
 }
 
 codenarc {
