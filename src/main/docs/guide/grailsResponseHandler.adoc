@@ -27,12 +27,6 @@ include::{sourceDir}/src/main/groovy/demo/MainRequestHandler.groovy[indent=0]
 ----
 
 [source,groovy]
-./src/main/groovy/demo/MainRequestHandler.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/MainRequestHandler.groovy[indent=0]
-----
-
-[source,groovy]
 ./src/main/groovy/demo/TextRequestHandlerFactory.groovy
 ----
 include::{sourceDir}/src/main/groovy/demo/TextRequestHandlerFactory.groovy[indent=0]
